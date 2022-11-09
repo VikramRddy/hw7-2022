@@ -37,30 +37,27 @@ document.querySelector("#faster").addEventListener("click", function() {
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Ahead");
 	video.currentTime += 10;
-	if (video.currentTime >= video.duration) {
+	if (video.currentTime == video.duration) {
 		video.currentTime = 0
 	}
 	console.log("Skip ahead " +video.currentTime)
 });
 
+// Do i have to use 3 equals or two equals 
 
 
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted == true) {
 		console.log("Unmute");
 		video.muted = false;
-		this.innerHTML = "Mute"
-	}
-
-	else{
+		document.querySelector("#mute").innerHTML = "Mute"
+	}else{
 		console.log("Mute")
 		video.muted = true;
-		this.innerHTML = "Unmute"
+		document.querySelector("#mute").innerHTML = "Unmute"
 	}
 
 });
-
-
 
 
 document.querySelector("#slider").addEventListener("click", function() {
@@ -82,6 +79,8 @@ document.querySelector("#vintage").addEventListener("click", function() {
 document.querySelector("#orig").addEventListener("click", function() {
 	video.classList.remove("oldSchool")
 });
+
+
 
 
 
